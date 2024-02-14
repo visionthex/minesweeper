@@ -1,0 +1,30 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-right: 110px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+}
+
+.user-card button {
+  margin-right: 110px;
+}
+
+form {
+  padding: 10px;
+}
+
+input[type="submit"], button {
+  padding: 5px 10px;
+}
+
+input[type="text"] {
+  padding: 5px;
+}

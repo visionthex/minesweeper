@@ -1,0 +1,166 @@
+/* Importing the custom font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Setting default cursor for all elements */
+* {
+  cursor: default;
+}
+
+/* Styling for the main app */
+.App {
+  text-align: center;
+  background-color: #ffffff;
+  font-family: "Press Start 2P", system-ui;
+}
+
+/* Styling for the app header */
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: "Press Start 2P", system-ui;
+}
+
+/* General button styling */
+button {
+  width: 2em;
+  height: 2em;
+  border: 1px solid #7B7B7B;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 14px;
+  background-color: #C0C0C0;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Press Start 2P", system-ui;
+  box-shadow: inset -1px -1px 0px #fff, /* Light shadow */
+              inset 1px 1px 0px #7B7B7B; /* Dark shadow */
+}
+
+/* Button styling for different states */
+button:active {
+  box-shadow: inset -1px -1px 0px #7B7B7B, /* Dark shadow */
+              inset 1px 1px 0px #fff; /* Light shadow */
+  background-color: #808080; /* Darker gray when pressed */
+}
+button:hover {
+  background-color: #939393; /* Light gray */
+}
+button.hidden {
+  background-color: #888888; /* Dark gray */
+}
+button.clicked {
+  background-color: #808080; /* Darker gray when clicked */
+  box-shadow: none;
+}
+button.mine {
+  background-color: #FF0000; /* Red for mines */
+}
+
+/* Button styling for different numbers */
+button.number-1 { color: #0000FF; } /* Blue */
+button.number-2 { color: #008000; } /* Green */
+button.number-3 { color: #FFA500; } /* Orange */
+button.number-4 { color: #000080; } /* Dark Blue */
+button.number-5 { color: #800080; } /* Purple */
+button.number-6 { color: #008080; } /* Cyan */
+button.number-7 { color: #000000; } /* Black */
+button.number-8 { color: #FFFF00; } /* Yellow */
+
+/* Styling for the game board */
+.Board {
+  display: grid;
+  grid-template-columns: repeat(10, 2em);
+  gap: 0;
+  justify-items: center;
+  align-items: center;
+}
+.Board-Background {
+  background-color: #939393;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: inset 0 0 20px #000;
+  border: 1px solid #000;
+  font-family: "Press Start 2P", system-ui;
+}
+
+/* Media query for smaller screens */
+@media (min-width: 600px) {
+  button {
+    width: 2em;
+    height: 2em;
+  }
+  .Board {
+    display: grid;
+    grid-template-columns: repeat(10, 2em);
+    row-gap: 0.3em;
+    column-gap: 0.1em;
+    justify-items: center;
+    align-items: center;
+  }
+  .Board-Background {
+    background-color: #939393;
+    padding: 1em;
+    border-radius: 3px;
+    box-shadow: inset 0 0 20px #000;
+    border: 1px solid #000;
+    font-family: "Press Start 2P", system-ui;
+  }
+}
+
+/* Styling for the game set */
+.GameSet {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the timer and score */
+.timer, .score {
+  text-align: right;
+  color: red;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100px;
+  margin-bottom: 5px;
+  border: 2px solid rgb(161, 161, 161);
+}
+.score {
+  text-align: left;
+  order: -1;
+}
+
+/* Styling for the sad face */
+.sadface-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.sadface {
+  display: flex;
+  color: yellow;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Keyframes for the glitch animation */
+@keyframes glitch {
+  0% { text-shadow: none; }
+  10%, 90% { text-shadow: -2px 0 blue, 2px 0 red; }
+  20%, 80% { text-shadow: -2px 0 red, 2px 0 blue; }
+  30%, 50%, 70% { text-shadow: -2px 0 blue, 2px 0 red; }
+  40%, 60% { text-shadow: -2px 0 red, 2px 0 blue; }
+  100% { text-shadow: none; }
+}
+
+/* Applying the glitch animation to h1 */
+h1.glitch {
+  animation: glitch 0.1s linear infinite;
+}
+
